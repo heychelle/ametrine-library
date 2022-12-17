@@ -21,7 +21,7 @@ class Magazine extends Model
         'loan_due'
     ];
 
-    public function reviews(){
-        return $this->morphMany(User::class, 'reviewable');
+    public function contact(){
+        return $this->morphOne(Contact::class, 'contactable');
     }
 }

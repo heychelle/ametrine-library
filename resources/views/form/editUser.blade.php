@@ -20,8 +20,8 @@
                         <label class="form-label">Role</label>
                         <select name="role" id="" class="form-select">
                             @if ($user->role == '0')
-                                <option value="0" selected>Admin</option>
-                                <option value="1">User</option>
+                                <option value="0" @if ($book->genre == '0') selected @endif>selected>Admin</option>
+                                <option value="1" @if ($book->genre == '1') selected @endif>>User</option>
                             @else
                                 <option value="0">Admin</option>
                                 <option value="1" selected>User</option>

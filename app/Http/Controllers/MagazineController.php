@@ -94,7 +94,6 @@ class MagazineController extends Controller
             'status' => $request->status,
             'loan_date' => $request->loan_date,
             'loan_due' => $request->loan_due,
-            'review' => $request->user_id->review,
         ]);
 
         // $magazine->reviews()->create(['review' => 'blah for topic', 'user_id' => Auth::id()]);

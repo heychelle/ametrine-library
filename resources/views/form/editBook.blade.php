@@ -19,18 +19,18 @@
                     <div class="mb-3">
                         <label class="form-label">Genre</label>
                         <select name="genre" id="" class="form-select">
-                            <option value="0">Mystery</option>
-                            <option value="1">Fantasy</option>
-                            <option value="2">Horror</option>
+                            <option value="0" @if ($book->genre == '0') selected @endif>Mystery</option>
+                            <option value="1" @if ($book->genre == '1') selected @endif>Fantasy</option>
+                            <option value="2" @if ($book->genre == '2') selected @endif>Horror</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select name="status" id="" class="form-select">
-                            <option value="0">Available</option>
-                            <option value="1">Borrowed</option>
-                            <option value="2">Due</option>
-                            <option value="3">Booked</option>
+                            <option value="0" @if ($book->status == '0') selected @endif>Available</option>
+                            <option value="1" @if ($book->status == '1') selected @endif>Borrowed</option>
+                            <option value="2" @if ($book->status == '2') selected @endif>Due</option>
+                            <option value="3" @if ($book->status == '3') selected @endif>Booked</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -41,10 +41,10 @@
                         <label class="form-label">Loan Due</label>
                         <input type="date" class="form-control" name="loan_due" value="{{ $book->loan_due }}">
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="form-label">Review</label>
                         <input type="text" class="form-control" name="review" value="{{ $book->users->review}}">
-                    </div>
+                    </div> --}}
                     <input type="submit" value="Save" class="btn btn-outline-dark">
                 </form>
             </div>

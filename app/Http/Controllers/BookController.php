@@ -72,7 +72,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id); //cari buku yang id nya sesuai parameter
-        
+
 
         return view('form.editBook', compact('book'));
     }
@@ -95,7 +95,6 @@ class BookController extends Controller
             'status' => $request->status,
             'loan_date' => $request->loan_date,
             'loan_due' => $request->loan_due,
-            'review' => $request->users->review,
         ]);
 
         return redirect('/');

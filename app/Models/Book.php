@@ -26,8 +26,4 @@ class Book extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
-
-    public function reviews(){
-        return $this->morphMany(User::class, 'reviewable');
-    }
 }
