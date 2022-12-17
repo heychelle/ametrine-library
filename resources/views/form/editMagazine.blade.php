@@ -4,25 +4,17 @@
     <div class="container">
         <div class="row justify-content-center">        
             <div class="col-md-8">
-                <h1>Edit Book</h1>
-                <form action="{{ route('books.update', $book->id) }}" method="POST"> 
+                <h1>Edit Magazine</h1>
+                <form action="{{ route('magazines.update', $magazine->id) }}" method="POST"> 
                     @csrf
                     <input type="hidden" name="_method" value="PATCH">
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" value="{{ $book->name }}">
+                        <input type="text" class="form-control" name="name" value="{{ $magazine->name }}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Description</label>
-                        <textarea type="text" class="form-control" name="description">{{ $book->description }}</textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Genre</label>
-                        <select name="genre" id="" class="form-select">
-                            <option value="0">Mystery</option>
-                            <option value="1">Fantasy</option>
-                            <option value="2">Horror</option>
-                        </select>
+                        <textarea type="text" class="form-control" name="description">{{ $magazine->description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Status</label>
@@ -35,16 +27,16 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Loan Date</label>
-                        <input type="date" class="form-control" name="loan_date" value="{{ $book->loan_date }}">
+                        <input type="date" class="form-control" name="loan_date" value="{{ $magazine->loan_date }}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Loan Due</label>
-                        <input type="date" class="form-control" name="loan_due" value="{{ $book->loan_due }}">
+                        <input type="date" class="form-control" name="loan_due" value="{{ $magazine->loan_due }}">
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="form-label">Review</label>
-                        <input type="text" class="form-control" name="review" value="{{ $book->users->review}}">
-                    </div>
+                        <input type="text" class="form-control" name="review" value="{{ $magazine->users->review}}">
+                    </div> --}}
                     <input type="submit" value="Save" class="btn btn-outline-dark">
                 </form>
             </div>

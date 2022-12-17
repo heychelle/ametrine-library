@@ -27,12 +27,13 @@
                 </a>          
                 @if (Auth::user())      
                     <a href="/" class="text-decoration-none" style="color: rgb(85,86,88);">Book</a>
+                    <a href="magazines" class="text-decoration-none ms-2" style="color: rgb(85,86,88);">Magazine</a>
                     @if (Auth::user()->role == '0')
                         <a href="{{ route('users.index') }}" class="text-decoration-none ms-2" style="color: rgb(85,86,88);">User</a>
+                        <a href="/log" class="text-decoration-none ms-2" style="color: rgb(85,86,88);">Book logs</a>
                     @endif
                     <a href="/borrows" class="text-decoration-none ms-2" style="color: rgb(85,86,88);">Borrow</a>
-                    <a href="/log" class="text-decoration-none ms-2" style="color: rgb(85,86,88);">Book logs</a>
-                    <a href="/mybook" class="text-decoration-none ms-2" style="color: rgb(85,86,88);">My book</a>
+                    <a href="/mybook" class="text-decoration-none ms-2" style="color: rgb(85,86,88);">My Collection</a>
                 @endif
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
