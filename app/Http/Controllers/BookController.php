@@ -20,7 +20,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all(); //ambil semua buku di table books
+        return view('home', compact('books'));
     }
 
     /**

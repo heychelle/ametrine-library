@@ -25,6 +25,7 @@ Route::post('/borrow/{id}', [BorrowController::class, 'borrow']);
 Route::post('/accept/{id}', [BorrowController::class, 'accept']);
 Route::post('/cancel/{id}', [BorrowController::class, 'cancel']);
 Route::get('/log', [BorrowController::class, 'log']);
+Route::get('/mybook', [BorrowController::class, 'mybook']);
 
 Auth::routes();
 
