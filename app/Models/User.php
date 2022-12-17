@@ -46,4 +46,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Book::class, 'user_id', 'id'); // user_id itu foreign key, id itu primary key
     }
+
+    public function contact(){
+        return $this->morphOne(Contact::class, 'contactable');
+    }
 }

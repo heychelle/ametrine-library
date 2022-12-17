@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
+use App\Models\Magazine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class BookController extends Controller
+class MagazineController extends Controller
 {
     // Middleware kalo belum login ga bisa akses
     public function __construct()
@@ -20,8 +21,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all(); //ambil semua buku di table books
-        return view('home', compact('books'));
+        $magazines = Magazine::all(); //ambil semua buku di table books
+        return view('magazine', compact('magazines'));
     }
 
     /**
@@ -31,7 +32,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('form.createBook'); //method pasti get, dia balikin view yang mana
+        return view('form.createMagazine'); //method pasti get, dia balikin view yang mana
     }
 
     /**
@@ -42,14 +43,13 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create([
+        Magazine::create([
             'name' => $request->name, //yang kiri itu field db, yang kanan name dari input form
             'description' => $request->description,
-            'genre' => $request->genre,
             'status' => '0'
         ]);
 
-        return redirect('/'); // method pasti bukan get, ga punya view jadi harus redirect ke view tertentu habis selesai jalanin semua function
+        return redirect("magazines"); // method pasti bukan get, ga punya view jadi harus redirect ke view tertentu habis selesai jalanin semua function
     }
 
     /**
@@ -71,10 +71,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $book = Book::findOrFail($id); //cari buku yang id nya sesuai parameter
+        $magazine = Magazine::findOrFail($id); //cari buku yang id nya sesuai parameter
 
-
-        return view('form.editBook', compact('book'));
+        return view('form.editMagazine', compact('magazine'));
     }
 
     /**
@@ -86,18 +85,21 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $book = Book::findOrFail($id);
 
-        $book->update([
+        $magazine = Magazine::findOrFail($id);
+
+        $magazine->update([
             'name' => $request->name, //yang kiri itu field db, yang kanan name dari input form
             'description' => $request->description,
-            'genre' => $request->genre,
             'status' => $request->status,
             'loan_date' => $request->loan_date,
             'loan_due' => $request->loan_due,
         ]);
 
-        return redirect('/');
+        // $magazine->reviews()->create(['review' => 'blah for topic', 'user_id' => Auth::id()]);
+
+
+        return redirect("magazines");
     }
 
     /**
@@ -108,9 +110,9 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $book = Book::findOrFail($id);
-        $book->delete();
+        $magazine = Magazine::findOrFail($id);
+        $magazine->delete();
 
-        return redirect("/");
+        return redirect("magazines");
     }
 }
