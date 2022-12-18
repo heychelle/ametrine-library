@@ -18,7 +18,6 @@
                         <th>Status</th>
                         <th>Loan Date</th>
                         <th>Loan Due</th>
-                        <th>Review</th>
                         @if (Auth::user()->role == '0')
                             <th>Action</th>
                         @endif
@@ -59,11 +58,6 @@
                             </td>
                             <td>{{ $book->loan_date }}</td>
                             <td>{{ $book->loan_due }}</td>
-                            <td>
-                            @if (!empty($book->users->review))
-                                {{ $book->users->review }}
-                            @endif
-                            </td>
                             @if (Auth::user()->role == '0')
                             <td>
                                 <a href="{{ route('books.edit', $book->id) }}" class="btn btn-outline-warning">Edit</a>  

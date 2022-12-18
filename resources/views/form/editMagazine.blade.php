@@ -19,10 +19,10 @@
                     <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select name="status" id="" class="form-select">
-                            <option value="0" @if ($book->genre == '0') selected @endif>>Available</option>
-                            <option value="1" @if ($book->genre == '1') selected @endif>>Borrowed</option>
-                            <option value="2" @if ($book->genre == '2') selected @endif>>Due</option>
-                            <option value="3" @if ($book->genre == '3') selected @endif>>Booked</option>
+                            <option value="0" @if ($magazine->genre == '0') selected @endif>Available</option>
+                            <option value="1" @if ($magazine->genre == '1') selected @endif>Borrowed</option>
+                            <option value="2" @if ($magazine->genre == '2') selected @endif>Due</option>
+                            <option value="3" @if ($magazine->genre == '3') selected @endif>Booked</option>
                         </select>
                     </div>
                     <div class="mb-3">
