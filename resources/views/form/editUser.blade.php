@@ -19,13 +19,8 @@
                     <div class="mb-3">
                         <label class="form-label">Role</label>
                         <select name="role" id="" class="form-select">
-                            @if ($user->role == '0')
-                                <option value="0" @if ($book->genre == '0') selected @endif>selected>Admin</option>
-                                <option value="1" @if ($book->genre == '1') selected @endif>>User</option>
-                            @else
-                                <option value="0">Admin</option>
-                                <option value="1" selected>User</option>
-                            @endif
+                            <option value="0" @if ($user->role == '0') selected @endif>Admin</option>
+                            <option value="1" @if ($user->role == '1') selected @endif>User</option>
                         </select>
                     </div>
                     <input type="submit" value="Save" class="btn btn-outline-dark">
