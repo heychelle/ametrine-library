@@ -21,6 +21,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        // debugging, klo ga pakai debugbar
+        // dd($users);
+
+        // var_dump($users);
+        // die();
+
+        // print_r($users);
+        // die();
 
         return view('users', compact('users'));
     }
