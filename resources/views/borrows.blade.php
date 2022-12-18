@@ -5,7 +5,7 @@
     <div class="row justify-content-center">        
         <div class="col-md-10">
             <h1>Borrow Request</h1>
-            <h5>Magazine is not allowed to be borrowed</h5>
+            {{-- <h5>Magazine is not allowed to be borrowed</h5> --}}
             <table class="table table-stripped">
                 <thead>
                     <tr>
