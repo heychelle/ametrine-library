@@ -67,4 +67,18 @@ class BorrowController extends Controller
         // $books = Book::all(); //ambil semua buku di table books
         return view('mybook', compact('books'));
     }
+    
+    public function greet(User $user)
+    {
+        $user = User::where('user_id', Auth::id())->get();
+        $greeting = null;
+
+        if ($user == 0) {
+            $greeting =  "Hello, admin!";
+        } else {
+            $greeting =  "Hello, user!";
+        }
+
+        return view('borrows', compact('greeting'));
+    }
 }
